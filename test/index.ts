@@ -4,8 +4,8 @@ import StripWhitespacePlugin from '../src/index';
 
 // initialize objects and create test code with expectations
 const plugin = new StripWhitespacePlugin();
-const code = `const longString = '      x          ';`;
-const expected = `const longString = ' x ';`;
+const code = `const longString = "      x          ";`;
+const expected = `const longString = " x ";`;
 
 // wire up the fake compiler and fake settings
 const fakeAssets = {

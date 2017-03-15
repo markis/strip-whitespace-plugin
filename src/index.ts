@@ -31,7 +31,7 @@ export default class StripWhitespacePlugin {
 
                 // perform the replacements
                 for (let replacement of result.replacements) {
-                  replaceSource.replace(replacement.start, replacement.end - 1, replacement.text);
+                  replaceSource.replace(replacement.start, replacement.end, replacement.text);
                 }
 
                 // generate the new sourcemap
