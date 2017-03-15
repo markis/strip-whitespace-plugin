@@ -20,7 +20,9 @@
     "whitespace",
     "strings",
     "strip-whitespace",
-    "minification"
+    "minification",
+    "webpack",
+    "plugin"
   ],
   "author": "Markis Taylor <m@rkis.cc>",
   "license": "MIT",
