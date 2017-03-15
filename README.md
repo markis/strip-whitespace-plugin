@@ -27,12 +27,12 @@ function() {
 Put this plugin before your minification plugins (ex. uglify-js)
 
 ```
-var stripWhitespace = require('../index.js');
+var StripWhitespace = require('strip-whitespace-plugin');
 
 module.exports = {
   ...
   plugins: [
-    new stripWhitespace(),
+    new StripWhitespace(),
     ...
     // put your minification plugins here.
   ]
