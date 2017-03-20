@@ -1,4 +1,4 @@
-var stripWhitespace = require('../index.js');
+var StringDedupePlugin = require('../index.js');
 
 module.exports = {
   entry: {
@@ -8,6 +8,8 @@ module.exports = {
     filename: 'output.[name].js'
   },
   plugins: [
-    new stripWhitespace()
+    new StringDedupePlugin({
+      addScope: true
+    })
   ]
 };

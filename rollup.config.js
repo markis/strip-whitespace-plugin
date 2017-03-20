@@ -8,9 +8,9 @@ module.exports = {
   moduleName: 'dedupe',
   external: [
     'assert',
+    'de-dupe',
     'fs',
     'path',
-    'strip-whitespace',
     'webpack',
     'webpack-sources',
     'typescript'

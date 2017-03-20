@@ -1,13 +1,25 @@
-import StripWhitespace from 'strip-whitespace';
+import Dedupe, { DedupeOptions } from 'de-dupe';
 import { Compiler } from 'webpack';
 import { RawSource, ReplaceSource, SourceMapSource } from 'webpack-sources';
 
-const stripWhitespace = new StripWhitespace();
-const pluginName = 'strip-whitespace-plugin';
+const pluginName = 'dedupe-string-plugin';
+
+export interface DedupeStringPluginOptions extends DedupeOptions {
+
+}
 
 export default class StripWhitespacePlugin {
+  private dedupe: Dedupe;
+
+  constructor(options?: DedupeStringPluginOptions) {
+    options = options || {};
+    options.type = 'gzip';
+    options.includeReplacements = true;
+    this.dedupe = new Dedupe(options);
+  }
 
   public apply(compiler: Compiler) {
+    const dedupe = this.dedupe.dedupe.bind(this.dedupe);
 
     compiler.plugin('compilation', (compilation: any) => {
       compilation.plugin('optimize-chunk-assets', (chunks: any, callback: Function) => {
@@ -17,7 +29,10 @@ export default class StripWhitespacePlugin {
               const asset = compilation.assets[file];
               const code = asset.source();
 
-              const result = stripWhitespace.strip(code);
+              const result = dedupe(code);
+              if (!result.replacements) {
+                return;
+              }
 
               if (result.replacements.length === 0) {
                 // nothing to do here
