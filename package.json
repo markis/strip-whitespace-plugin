@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/markis/strip-whitespace-plugin#readme",
   "devDependencies": {
-    "@types/webpack": "^2.2.11",
+    "@types/webpack": "^2.2.14",
     "@types/webpack-sources": "^0.1.1",
     "if-ver": "^1.0.6",
     "in-publish": "^2.0.0",
