@@ -36,7 +36,7 @@ export default class StripWhitespacePlugin {
 
                 // generate the new sourcemap
                 const sourceAndMap = replaceSource.sourceAndMap();
-                const { source, map } = sourceAndMap;
+                const { map } = sourceAndMap;
 
                 // replace the asset with the new sourcemap
                 compilation.assets[file] = new SourceMapSource(result.code, pluginName, map, code);
