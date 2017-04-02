@@ -6,7 +6,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/markis/strip-whitespace-plugin/badge.svg)](https://snyk.io/test/github/markis/strip-whitespace-plugin)
 [![David](https://img.shields.io/david/markis/strip-whitespace-plugin.svg)](https://david-dm.org/markis/strip-whitespace-plugin)
 [![Greenkeeper badge](https://badges.greenkeeper.io/markis/strip-whitespace-plugin.svg)](https://greenkeeper.io/)
-[![Codacy coverage](https://img.shields.io/codacy/coverage/56982b9998354357beea778664fb2cfe.svg)](https://www.codacy.com/app/markis/strip-whitespace-plugin/files)
+[![Coveralls](https://img.shields.io/coveralls/markis/strip-whitespace-plugin.svg)](https://coveralls.io/github/markis/strip-whitespace-plugin)
 [![Codacy grade](https://img.shields.io/codacy/grade/56982b9998354357beea778664fb2cfe.svg)](https://www.codacy.com/app/markis/strip-whitespace-plugin)
 
 Strip-Whitespace-Plugin is a plugin for webpack that will remove extraneous spaces from strings. It's perfect for working with rendering templates (ex. mustache, handlebars) or es6 javascript templates. It works with anything where you might create very long strings.
