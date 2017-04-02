@@ -12,7 +12,8 @@
     "test": "npm run lint && npm run build && npm run test:unit && npm run test:webpack",
     "test:unit": "npm run build:test && node test.js",
     "test:webpack": "if-ver -ge 4 && cd test-setup && webpack || return 0",
-    "test:coverage": "if-ver -ge 0.12 && istanbul cover test.js || return 0",
+    "coverage": "if-ver -ge 6 && istanbul cover test.js --report lcovonly && npm run coverage:remap || return 0",
+    "coverage:remap": "if-ver -ge 6 && remap-istanbul --type lcovonly -i coverage/coverage.json -o coverage/remapped-lcov.info || return 0",
     "build": "npm run build:index && npm run build:test",
     "build:index": "if-ver -ge 0.12 && rollup -c -o index.js -i src/index.ts || return 0",
     "build:test": "if-ver -ge 0.12 && rollup -c -o test.js -i test/index.ts || return 0"

@@ -25,14 +25,16 @@ install:
 
 # install code-coverage (node >0.12)
 - npm install if-ver -g
-- if-ver -gt 6 && npm install codacy-coverage istanbul remap-istanbul -g || return 0
+- if-ver -gt 6 && npm install codacy-coverage coveralls istanbul remap-istanbul -g || return 0
 
 script:
 - npm test
 
 # code coverage and upload to codacy (node >0.12)
 - (if-ver -gt 6 && istanbul cover test.js --report lcovonly) || return 0
-- (if-ver -gt 6 && remap-istanbul --type lcovonly -i coverage/coverage.json | codacy-coverage) || return 0
+- (if-ver -gt 6 && remap-istanbul --type lcovonly -i coverage/coverage.json -o coverage/remapped-lcov.info) || return 0
+- (if-ver -gt 6 && cat coverage/remapped-lcov.info | codacy-coverage) || return 0
+- (if-ver -gt 6 && cat coverage/remapped-lcov.info | coveralls) || return 0
 
 deploy:
   provider: npm
