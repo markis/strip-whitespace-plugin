@@ -7,15 +7,23 @@
     "prepublish": "in-publish && npm test && npm run build || not-in-publish ",
     "lint": "if-ver -ge 4 && tslint -c tslint.json ./src/**/*.ts || return 0",
     "test": "npm run lint && npm run build && npm run test:unit && npm run test:webpack",
-    "test:unit": "rollup -c -o test.js -i test/index.ts && node test.js",
+    "test:unit": "npm run build:test && node test.js",
     "test:webpack": "if-ver -ge 4 && cd test-setup && webpack || return 0",
-    "build": "npm run build:index",
-    "build:index": "rollup -c -o index.js -i src/index.ts"
+    "test:coverage": "if-ver -ge 0.12 && istanbul cover test.js || return 0",
+    "build": "npm run build:index && npm run build:test",
+    "build:index": "if-ver -ge 0.12 && rollup -c -o index.js -i src/index.ts || return 0",
+    "build:test": "if-ver -ge 0.12 && rollup -c -o test.js -i test/index.ts || return 0"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/markis/strip-whitespace-plugin.git"
   },
+  "files": [
+    "index.js",
+    "LICENSE.md",
+    "package.json",
+    "README.md"
+  ],
   "keywords": [
     "whitespace",
     "strings",
