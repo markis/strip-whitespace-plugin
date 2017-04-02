@@ -1,6 +1,6 @@
 {
   "name": "strip-whitespace-plugin",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "description": "Strip whitespace from strings in javascript assets",
   "main": "index.js",
   "engines": {
