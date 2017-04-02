@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "prepublish": "in-publish && npm test && npm run build || not-in-publish ",
-    "lint": "tslint -c tslint.json ./src/**/*.ts",
+    "lint": "if-ver -ge 4 && tslint -c tslint.json ./src/**/*.ts || return 0",
     "test": "npm run lint && npm run build && npm run test:unit && npm run test:webpack",
     "test:unit": "rollup -c -o test.js -i test/index.ts && node test.js",
-    "test:webpack": "cd test-setup && webpack",
+    "test:webpack": "if-ver -ge 4 && cd test-setup && webpack || return 0",
     "build": "npm run build:index",
     "build:index": "rollup -c -o index.js -i src/index.ts"
   },
@@ -33,15 +33,16 @@
   "devDependencies": {
     "@types/webpack": "^2.2.11",
     "@types/webpack-sources": "^0.1.1",
+    "check-node-version": "^2.0.1",
     "in-publish": "^2.0.0",
     "rollup": "^0.41.5",
     "rollup-plugin-typescript": "^0.8.1",
-    "tslint": "^4.5.1",
+    "tslint": "^5.0.0",
     "typescript": "^2.2.1",
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "strip-whitespace": "0.0.10",
+    "strip-whitespace": "^1.0.3",
     "webpack-sources": "^0.2.0"
   }
 }

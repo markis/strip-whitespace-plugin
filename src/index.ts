@@ -10,7 +10,7 @@ export default class StripWhitespacePlugin {
   public apply(compiler: Compiler) {
 
     compiler.plugin('compilation', (compilation: any) => {
-      compilation.plugin('optimize-chunk-assets', (chunks: any, callback: Function) => {
+      compilation.plugin('optimize-chunk-assets', (chunks: any, callback: () => void) => {
         chunks.forEach((chunk: any) => {
           chunk.files
             .forEach((file: string) => {
@@ -30,7 +30,7 @@ export default class StripWhitespacePlugin {
                 const replaceSource = new ReplaceSource(compilation.assets[file], pluginName);
 
                 // perform the replacements
-                for (let replacement of result.replacements) {
+                for (const replacement of result.replacements) {
                   replaceSource.replace(replacement.start, replacement.end, replacement.text);
                 }
 

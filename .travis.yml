@@ -1,18 +1,26 @@
 language: node_js
-
 node_js:
-  - "4"
+- '4'
 
 cache:
   directories:
-    - node_modules
+  - node_modules
 
 before_install:
-  - "npm config set spin false"
-  - "npm --version"
+- npm config set spin false
+- npm --version
 
 install:
-  - "npm install"
+- npm install
 
 script:
-  - "npm test"
+- npm test
+
+deploy:
+  provider: npm
+  email: m@rkis.cc
+  api_key:
+    secure: mv9jr2LqTZEVtJkx4cEf8NjELSdsrBMv3l0hGuZjwpUpaGCkngln+M5JtNMTIVThJF4Il5dNbPRA5fHHmdzZjCWZBTEYne21wWfzD1ym54+7taKPVeq6pe3NXENByTaeANKvLR+bZlgFPaZzoLB+O+8vU7O7gZQ6FGvE32i5kw50wz1SwJKEBwFmV7r8gnrqC485peHDr2w2jpjaUIHrMQvBqdoww1Vi9k1ItcpfAT9MeOFC62aAYGShLQ/Ki1LKeKqVzr7IP/shyu/1J2LOvykoOz+wWSrjsDAw12jCnWXZ5tWt7hBcDfYhHI/0h+FMq5G8222LdCV1h6v6sjbMSpMR/4cC3Lxy8Qux4DXYuwh/kx65CuJEhH8IryfMERfr8C8kk28t8Tg4Gnz9xl63TQdbTDvflWWj3mT4em+cx2RAqKbKjr0oqVFYMxp4+y1hRJXh/o+5M31gmiOCgQRKMmgg//3mWyGyG8/AAq9OvLgD6HKM2fynoPzCKJ3y0bYTCKro6yG7Dayp8T9rm2L7T5EIHDTqNOG0v+c6yatekauONZWrr+F1i1T9MpJiXWGVRs5u6FAKW804KdZA8PV/wbDo4Ip0axt6AFEdpJXnP+0Kbyz3qV1oq4sbnEf4XMdkFq6jZ4qgWBUt/XcsQW5VdNglrvRrSLvObu3DAMDrOvg=
+  on:
+    tags: true
+    repo: markis/strip-whitespace-plugin
