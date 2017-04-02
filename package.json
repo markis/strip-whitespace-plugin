@@ -50,7 +50,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "strip-whitespace": "^1.0.3",
+    "strip-whitespace": "^1.0.4",
     "webpack-sources": "^0.2.0"
   }
 }
