@@ -4,8 +4,9 @@ module.exports = {
   entry: './src/index.ts',
   dest: 'index.js',
   format: 'cjs',
-  moduleId: 'de-dupe',
-  moduleName: 'dedupe',
+  moduleId: 'strip-whitespace',
+  moduleName: 'stripWhitespace',
+  sourceMap: true,
   external: [
     'assert',
     'fs',
