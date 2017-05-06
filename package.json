@@ -43,18 +43,18 @@
   },
   "homepage": "https://github.com/markis/strip-whitespace-plugin#readme",
   "devDependencies": {
-    "@types/webpack": "^2.2.14",
+    "@types/webpack": "^2.2.15",
     "@types/webpack-sources": "^0.1.1",
     "if-ver": "^1.0.6",
     "in-publish": "^2.0.0",
-    "rollup": "^0.41.5",
+    "rollup": "^0.41.6",
     "rollup-plugin-typescript": "^0.8.1",
-    "tslint": "^5.0.0",
-    "typescript": "^2.2.1",
-    "webpack": "^2.2.1"
+    "tslint": "^5.2.0",
+    "typescript": "^2.3.2",
+    "webpack": "^2.5.0"
   },
   "dependencies": {
-    "strip-whitespace": "^1.0.4",
-    "webpack-sources": "^0.2.0"
+    "strip-whitespace": "^1.0.6",
+    "webpack-sources": "^0.2.3"
   }
 }
