@@ -51,7 +51,7 @@
     "rollup-plugin-typescript": "^0.8.1",
     "tslint": "^5.2.0",
     "typescript": "^2.3.2",
-    "webpack": "^2.5.0"
+    "webpack": "^3.0.0"
   },
   "dependencies": {
     "strip-whitespace": "^1.0.6",
