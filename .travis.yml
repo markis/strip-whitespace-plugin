@@ -1,11 +1,5 @@
 language: node_js
 node_js:
-# legacy node
-- '0.12'
-# iojs
-- '1'
-- '2'
-- '3'
 # current versions
 - '4'
 - '5'
