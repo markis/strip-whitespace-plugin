@@ -8,3 +8,4 @@ tmp/
 /test.js
 /test-setup/output.index.js
 /test-setup/output.index.js.map
+*.map
