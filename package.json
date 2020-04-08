@@ -55,6 +55,6 @@
   },
   "dependencies": {
     "strip-whitespace": "^1.0.7",
-    "webpack-sources": "^1.1.0"
+    "webpack-sources": "^1.4.3"
   }
 }
